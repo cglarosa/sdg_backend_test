@@ -6,9 +6,9 @@ import psycopg2
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
+#app.config["SQLALCHEMY_DATABASE_URI"] = os.environ['DATABASE_URL']
 app.config['CORS_HEADERS'] = 'Content-Type'
-#app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:password@localhost/postgres'
+app.config["SQLALCHEMY_DATABASE_URI"] = 'postgresql://postgres:password@localhost/postgres'
 CORS(app)
 app.secret_key = 'my_secret_key'
 db = SQLAlchemy(app)
